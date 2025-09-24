@@ -45,21 +45,5 @@ def grid_search(y, tx, grid_w0, grid_w1):
         for j,w1 in enumerate (grid_w1):
             w = np.array([w0,w1])
             losses[i,j] = compute_loss(y,tx,w)
-            
-
-
-    min_loss, w0_star, w1_star = get_best_parameters(grid_w0, grid_w1, losses)
-
-
-    print(f"Best parameters: w0 = {w0_star}, w1 = {w1_star}, with loss = {min_loss}")
-    
-    mean_x = np.mean(tx[:,1])
-    std_x = np.std(tx[:,1])
-    
-    # Visualization
-    plt.close("all")
-    fig = grid_visualization(losses, grid_w0, grid_w1, mean_x, std_x, tx[:,1], y)
-    plt.show()
-
     
     return losses      
