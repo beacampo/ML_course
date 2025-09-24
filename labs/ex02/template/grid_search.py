@@ -22,7 +22,7 @@ def get_best_parameters(w0, w1, losses):
     min_row, min_col = np.unravel_index(np.argmin(losses), losses.shape)
     return losses[min_row, min_col], w0[min_row], w1[min_col]
 
-def grid_search(y, tx, grid_w0, grid_w1):
+def grid_search_fun(y, tx, grid_w0, grid_w1):
     """Algorithm for grid search.
 
     Args:
@@ -36,9 +36,7 @@ def grid_search(y, tx, grid_w0, grid_w1):
     """
 
     losses = np.zeros((len(grid_w0), len(grid_w1)))
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # TODO: compute loss for each combination of w0 and w1.
+
     # ***************************************************
     
     for i,w0 in enumerate(grid_w0):
