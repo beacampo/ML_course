@@ -28,6 +28,6 @@ def compute_loss(y, tx, w):
     e = y -  tx.dot(w) #tx @ w
 
     
-    return calculate_mse(e)
+    return calculate_mse(y, tx, w)
 
     #return calculate_mae(e)
